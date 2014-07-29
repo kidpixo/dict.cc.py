@@ -22,7 +22,11 @@ Or add it to your path:
 
 ## This Version Mods
 
-Updated the README and cleaned the output from 
+#### Updated the README
+
+#### Cleaned the output
+
+Original output:
 
     dict.cc.py:
 
@@ -41,6 +45,30 @@ to
        attraverso.......across
        attraverso.......over
        attraverso.......through
+
+#### Installation 
+
+I use macports, so my preferred bin storage is `/opt/local/bin/`, choose yours: if it is in $PATH is ok.
+
+Clone the repo:
+
+    > git clone https://github.com/kidpixo/dict.cc.py.git
+
+Make sure it is executable by you
+
+    > ls -l 
+    -rwxr-xr-x  1 USER  GROUP  2.9K Jul 29 13:07 dict.cc.py
+
+if not, make it executable
+    chmod u+x dict.cc.py
+
+soft-link the executable to some place in your `$PATH`
+
+    sudo ln -s ~/Downloads/dict.cc.py/dict.cc.py /opt/local/bin/dictcc
+
+After that, usage is simply
+
+    > dictcc en it attraverso
 
 ## License
 
