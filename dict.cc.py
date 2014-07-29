@@ -57,7 +57,7 @@ class Dict:
 		else:
 			# Regex
 			# pattern = "\"[A-Za-z \.()\-\?ßäöüÄÖÜéáíçÇâêî\']*\""
-			pattern = "\"[^,]+\""
+			pattern = "\"[^,\[]+\""
 
 			# Return list of matching strings
 			self.inputWords = re.findall(pattern, engLine)
@@ -82,12 +82,10 @@ class Dict:
 			for i in range(0,minWords):
 				if self.inputWords[i] == "\"\"": continue
 				#print self.inputWords[i].strip("\"") + "," + self.outputWords[i].strip("\"")
-				print self.inputWords[i].strip("\"") + "."*(length - len(self.inputWords[i].strip("\"")) + 15) + self.outputWords[i].strip("\"")
+				print "   " +self.inputWords[i].strip("\"") + "."*(length - len(self.inputWords[i].strip("\"")) +5) + self.outputWords[i].strip("\"")
 
 
 if __name__ == "__main__":
-
-	print "dict.cc.py:\n"
 
 	if len(sys.argv) < 4:
 		print "USAGE:\n$ dict.cc.py \"input language (e.g. DE for German)\" \"output language e.g. EN for English)\" \"word\" (without the \"s)"
@@ -101,7 +99,7 @@ if __name__ == "__main__":
 		for index in range(3, len(sys.argv)):
 			expression += sys.argv[index] + " "
 
-		print inputFromSysArgv + " to " + outputFromSysArgv + ": " + expression + "\n"
+		print inputFromSysArgv + " to " + outputFromSysArgv + ": " + expression 
 		
 		# Urlencode input
 		expression = urllib.quote(expression)
